@@ -92,26 +92,26 @@ public class Issue {
 
     // ========== USER RELATIONSHIPS ==========
 
-//    @ManyToOne
-//    @JoinColumn(name = "invalidated_by")
-//    private User invalidatedBy;
-//
-//    @ManyToOne
-//    @JoinColumn(name = "reported_by", nullable = false)
-//    private User reportedBy;
-//
-//    @ManyToOne
-//    @JoinColumn(name = "resolved_by")
-//    private User resolvedBy;
-//
-//    // ========== MODULE RELATIONSHIP (Many-to-Many) ==========
-//    @ManyToMany
-//    @JoinTable(
-//            name = "issue_module",
-//            joinColumns = @JoinColumn(name = "issue_id"),
-//            inverseJoinColumns = @JoinColumn(name = "module_id")
-//    )
-//    private List<Module> modules = new ArrayList<>();
+    @ManyToOne
+    @JoinColumn(name = "invalidated_by")
+    private User invalidatedBy;
+
+    @ManyToOne
+    @JoinColumn(name = "reported_by", nullable = false)
+    private User reportedBy;
+
+    @ManyToOne
+    @JoinColumn(name = "resolved_by")
+    private User resolvedBy;
+
+    // ========== MODULE RELATIONSHIP (Many-to-Many) ==========
+    @ManyToMany
+    @JoinTable(
+            name = "issue_module",
+            joinColumns = @JoinColumn(name = "issue_id"),
+            inverseJoinColumns = @JoinColumn(name = "module_id")
+    )
+    private List<Module> modules = new ArrayList<>();
 
 
 
